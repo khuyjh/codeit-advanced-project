@@ -1,26 +1,156 @@
-@import "tailwindcss";
+@import 'tailwindcss';
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@theme {
+  /* colors */
+  --color-black-700: #353542;
+  --color-black-800: #252530;
+  --color-black-900: #1c1c22;
+
+  --color-gray-400: #9fa6b2;
+  --color-gray-600: #6e6e82;
+
+  --color-white: #f1f1f5;
+
+  --color-main-gradient: #5097fa #5363ff;
+  --color-main-blue: #5097fa;
+  --color-main-indigo: #5363ff;
+
+  --color-yellow: #ffc83c;
+  --color-green: #05d58b;
+  --color-pink: #ff2f9f;
+  --color-red: #ff0000;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+@layer utilities {
+  /* bg-color */
+  .bg-main-gradient {
+    background: linear-gradient(91.17deg, #5097fa 0%, #5363ff 100%);
+  }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+  /* fonts */
+  .text-2xl-bold {
+    font-size: 24px;
+    font-weight: 700;
+  }
+
+  .text-2xl-regular {
+    font-size: 24px;
+    font-weight: 400;
+  }
+
+  .text-xl-bold {
+    font-size: 20px;
+    font-weight: 700;
+  }
+
+  .text-xl-regular {
+    font-size: 20px;
+    font-weight: 400;
+  }
+
+  .text-lg-bold {
+    font-size: 18px;
+    font-weight: 700;
+  }
+
+  .text-lg-semibold {
+    font-size: 18px;
+    font-weight: 600;
+  }
+
+  .text-lg-medium {
+    font-size: 18px;
+    font-weight: 500;
+  }
+
+  .text-lg-regular {
+    font-size: 18px;
+    font-weight: 400;
+  }
+
+  .text-lg-light {
+    font-size: 18px;
+    font-weight: 300;
+  }
+
+  .text-base-bold {
+    font-size: 16px;
+    font-weight: 700;
+  }
+
+  .text-base-semibold {
+    font-size: 16px;
+    font-weight: 600;
+  }
+
+  .text-base-medium {
+    font-size: 16px;
+    font-weight: 500;
+  }
+
+  .text-base-regular {
+    font-size: 16px;
+    font-weight: 400;
+  }
+
+  .text-base-light {
+    font-size: 16px;
+    font-weight: 300;
+  }
+
+  .text-md-bold {
+    font-size: 14px;
+    font-weight: 700;
+  }
+
+  .text-md-semibold {
+    font-size: 14px;
+    font-weight: 600;
+  }
+
+  .text-md-medium {
+    font-size: 14px;
+    font-weight: 500;
+  }
+
+  .text-md-regular {
+    font-size: 14px;
+    font-weight: 400;
+  }
+
+  .text-md-light {
+    font-size: 14px;
+    font-weight: 300;
+  }
+
+  .text-sm-bold {
+    font-size: 12px;
+    font-weight: 700;
+  }
+
+  .text-sm-semibold {
+    font-size: 12px;
+    font-weight: 600;
+  }
+
+  .text-sm-medium {
+    font-size: 12px;
+    font-weight: 500;
+  }
+
+  .text-sm-regular {
+    font-size: 12px;
+    font-weight: 400;
+  }
+
+  .text-sm-light {
+    font-size: 12px;
+    font-weight: 300;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@layer components {
+}
+
+@layer base {
 }
