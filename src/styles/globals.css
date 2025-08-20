@@ -14,8 +14,7 @@
 
   --color-white: #f1f1f5;
 
-  --color-main-blue: #5097fa;
-  --color-main-indigo: #5363ff;
+  --color-main: #c40c0c;
 
   --color-yellow: #ffc83c;
   --color-green: #05d58b;
@@ -24,11 +23,6 @@
 }
 
 @layer utilities {
-  /* bg-color */
-  .bg-main-gradient {
-    background: linear-gradient(91.17deg, #5097fa 0%, #5363ff 100%);
-  }
-
   /* fonts */
   .text-2xl-bold {
     font-size: 24px;
