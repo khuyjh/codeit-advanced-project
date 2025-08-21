@@ -1,5 +1,5 @@
 @import 'tailwindcss';
-@import 'tw-animate-css';
+@import "tw-animate-css";
 
 @custom-variant dark (&:is(.dark *));
 
@@ -14,7 +14,9 @@
 
   --color-white: #f1f1f5;
 
-  --color-main: #c40c0c;
+  --color-main-gradient: #5097fa #5363ff;
+  --color-main-blue: #5097fa;
+  --color-main-indigo: #5363ff;
 
   --color-yellow: #ffc83c;
   --color-green: #05d58b;
@@ -23,6 +25,11 @@
 }
 
 @layer utilities {
+  /* bg-color */
+  .bg-main-gradient {
+    background: linear-gradient(91.17deg, #5097fa 0%, #5363ff 100%);
+  }
+
   /* fonts */
   .text-2xl-bold {
     font-size: 24px;
@@ -149,12 +156,6 @@
 }
 
 @layer base {
-  * {
-    @apply border-border outline-ring/50;
-  }
-  body {
-    @apply bg-background text-foreground;
-  }
 }
 
 @theme inline {
@@ -262,4 +263,13 @@
   --sidebar-accent-foreground: oklch(0.985 0 0);
   --sidebar-border: oklch(1 0 0 / 10%);
   --sidebar-ring: oklch(0.556 0 0);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
 }
