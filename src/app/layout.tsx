@@ -38,7 +38,7 @@ const pretendard = localFont({
 
 export const metadata: Metadata = {
   title: 'mobolae - 뭐볼래?',
-  description: '영화 추천, 비교 웹 애플리케이션',
+  description: '영상 매체 추천, 비교 웹 애플리케이션',
 };
 
 export default function RootLayout({
