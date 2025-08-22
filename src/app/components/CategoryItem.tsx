@@ -30,10 +30,10 @@ interface CategoryItemProps {
 const CategoryItem: React.FC<CategoryItemProps> = ({ category, isSelected, onClick }) => (
   <button
     onClick={onClick}
-    className={`w-full rounded-lg px-5 py-[15px] text-left text-sm font-medium transition-all duration-200 xl:text-base ${
+    className={`w-full rounded-lg border px-5 py-[15px] text-left text-sm font-medium transition-all duration-200 xl:text-base ${
       isSelected
-        ? 'bg-black-800 border-black-700 border text-white'
-        : 'border-black-900 bg-black-900 hover:bg-black-800 border text-gray-600 hover:text-gray-400'
+        ? 'bg-black-800 border-black-700 text-white'
+        : 'border-black-900 bg-black-900 hover:bg-black-800 text-gray-600 hover:text-gray-400'
     } `}
     type='button'
     aria-pressed={isSelected}
