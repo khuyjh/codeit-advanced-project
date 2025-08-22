@@ -1,26 +1,37 @@
 import { cva, type VariantProps } from 'class-variance-authority';
 import * as React from 'react';
 
-import { cn } from '@/shared/lib/chipUtils';
+import { cn } from '@/shared/lib/cn';
 
 const chipVariants = cva(
   'inline-flex items-center justify-center font-semibold whitespace-nowrap transition-colors',
   {
     variants: {
-      /* 종류별 칩 스타일, 커스텀 가능 */
-      size: {
-        ranking: 'h-[18px] rounded-[50px] px-[8px] py-[2px] text-sm-regular',
-        category: 'h-[29px] rounded-[8px] px-[10px] py-[4px] text-sm',
-        filter: 'h-[30px] rounded-full px-[12px] py-[6px] text-sm',
-        thumbs: 'h-[30px] rounded-full px-[12px] py-[6px] text-sm',
-        compare: 'h-[35px] rounded-[6px] px-[10px] py-[8px] text-sm',
+      /* 칩의 모양 */
+      variant: {
+        ranking: 'rounded-[50px]',
+        category: 'rounded-[8px]',
+        filter: 'rounded-full',
+        thumbs: 'rounded-full',
+        compare: 'rounded-[6px]',
       },
+      /* 칩의 크기 (패딩, 폰트 사이즈) */
+      size: {
+        ranking: 'px-[8px] py-[2px] text-sm-regular',
+        category: 'px-[10px] py-[4px] text-lg-medium',
+        filter: 'px-[12px] py-[6px] text-md-regular',
+        thumbs: 'px-[12px] py-[6px] text-md-regular',
+        compare: 'px-[10px] py-[8px] text-base-regular',
+      },
+      /* 칩의 상호작용 */
       clickable: {
         true: 'cursor-pointer',
       },
     },
     defaultVariants: {
-      size: 'filter',
+      /* 기본값 */
+      variant: 'category',
+      size: 'category',
     },
   },
 );
@@ -30,9 +41,13 @@ export interface ChipProps
     VariantProps<typeof chipVariants> {}
 
 const Chip = React.forwardRef<HTMLDivElement, ChipProps>(
-  ({ className, size, clickable, ...props }, ref) => {
+  ({ className, size, variant, clickable, ...props }, ref) => {
     return (
-      <div className={cn(chipVariants({ size, clickable }), className)} ref={ref} {...props} />
+      <div
+        className={cn(chipVariants({ size, variant, clickable }), className)}
+        ref={ref}
+        {...props}
+      />
     );
   },
 );
