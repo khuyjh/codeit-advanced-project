@@ -25,6 +25,9 @@ const CategoryMenu: React.FC<CategoryMenuProps> = ({ onCategoryChange }) => {
   /**
    * 브라우저 화면 크기에 따라 모바일/데스크탑 모드를 결정
    * 768px를 기준으로 분기처리하며, 리사이즈 이벤트를 감지
+   *
+   * TODO(UX): resize -> matchMedia로 변경 예정
+   * 이유: 성능 최적화 및 불필요한 리렌더링 방지
    */
   useEffect(() => {
     const checkIsMobile = () => {
