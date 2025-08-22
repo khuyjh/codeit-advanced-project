@@ -1,5 +1,7 @@
 import localFont from 'next/font/local';
 
+import QueryProvider from '@/shared/providers/QueryProvider';
+
 import type { Metadata } from 'next';
 
 import '@/styles/globals.css';
@@ -48,7 +50,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang='ko'>
-      <body className={`${pretendard.className} bg-black-900`}>{children}</body>
+      <QueryProvider>
+        <body className={`${pretendard.className} bg-black-900`}>{children}</body>
+      </QueryProvider>
     </html>
   );
 }
