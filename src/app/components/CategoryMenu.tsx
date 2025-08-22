@@ -8,21 +8,15 @@ import { CategoryMenuProps } from '@/shared/types/CategoryTypes';
  * 홈화면 카테고리 메뉴 메인 컴포넌트
  *
  * 역할:
- * - 전체 상태 관리 (선택된 카테고리, TODO:모바일 시트 상태, 기기 타입)
- * - 비즈니스 로직 처리 (카테고리 토글, 부모 컴포넌트 알림)
- * - 반응형 UI 조합 (데스크탑 사이드바 vs TODO:모바일 시트)
- *
- * 주요 특징:
- * - 반응형 디자인 (768px 기준으로 PC/모바일 분기)
- * - 단일 선택 및 토글 기능
+ * - 선택 상태 관리 (단일 선택 + 재클릭 해제)
+ * - 반응형 UI (데스크탑 사이드바 / TODO: 모바일 시트)
  *
  * @param onCategoryChange - 카테고리 변경 시 부모에게 알릴 콜백
- * @param initialValue - 초기 선택된 카테고리 값
  */
-const CategoryMenu: React.FC<CategoryMenuProps> = ({ onCategoryChange, initialValue = null }) => {
+const CategoryMenu: React.FC<CategoryMenuProps> = ({ onCategoryChange }) => {
   // ==================== 상태 관리 ====================
-  /** 현재 선택된 카테고리 값 */
-  const [selectedCategory, setSelectedCategory] = useState<string | null>(initialValue);
+  /** 현재 선택된 카테고리 값: 항상 null에서 시작 */
+  const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
 
   /** 모바일 기기 여부 (768px 미만) */
   const [isMobile, setIsMobile] = useState(false);
