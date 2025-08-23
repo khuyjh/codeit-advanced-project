@@ -17,11 +17,11 @@ const chipVariants = cva(
       },
       /* 칩의 크기 (패딩, 폰트 사이즈) */
       size: {
-        ranking: 'px-[8px] py-[2px] sm-regular',
-        category: 'px-[10px] py-[4px] lg-medium',
-        filter: 'px-[12px] py-[6px] md-regular',
-        thumbs: 'px-[12px] py-[6px] md-regular',
-        compare: 'px-[10px] py-[8px] base-regular',
+        ranking: 'px-[8px] py-[2px] text-sm-regular',
+        category: 'px-[10px] py-[4px] text-lg-medium',
+        filter: 'px-[12px] py-[6px] text-md-regular',
+        thumbs: 'px-[12px] py-[6px] text-md-regular',
+        compare: 'px-[10px] py-[8px] text-base-regular',
       },
       /* 칩의 상호작용 */
       clickable: {
