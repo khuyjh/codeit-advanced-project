@@ -34,7 +34,7 @@ const CategorySidebar: React.FC<CategorySidebarProps> = ({
   onCategorySelect,
 }) => (
   <aside className='bg-black-900 w-[180px] px-[10px] py-[45px] xl:w-[260px]'>
-    <h3 className='mb-5 px-5 text-sm font-normal text-white xl:text-base'>카테고리</h3>
+    <h3 className='text-md-regular xl:text-base-regular mb-5 px-5 text-white'>카테고리</h3>
     <nav role='navigation' aria-label='카테고리 네비게이션'>
       <div className='space-y-2'>
         {categories.map((category) => (
