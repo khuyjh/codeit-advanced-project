@@ -10,6 +10,17 @@ interface FloatingButtonProps {
   isVisible?: boolean;
 }
 
+/** 공통 버튼 스타일 */
+const BASE_CLASSES = `
+    fixed z-30 h-[60px] w-[60px] rounded-full bg-main text-white
+    transition-all duration-300
+    active:opacity-80
+    focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2
+    right-5 bottom-10
+    md:right-[30px] md:bottom-[60px]
+    xl:right-[180px] xl:bottom-[90px]
+  `;
+
 /**
  * 플로팅 버튼 (모달 연동 전, 버튼만 존재)
  *
@@ -46,17 +57,6 @@ const FloatingButton = ({ isVisible = true }: FloatingButtonProps) => {
     console.log('콘텐츠 추가 버튼 클릭');
     // TODO: 나중에 shadcn/ui Dialog 오픈 로직 연결
   };
-
-  /** 공통 버튼 스타일 */
-  const BASE_CLASSES = `
-    fixed z-30 h-[60px] w-[60px] rounded-full bg-main text-white
-    transition-all duration-300
-    active:opacity-80
-    focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2
-    right-5 bottom-10
-    md:right-[30px] md:bottom-[60px]
-    xl:right-[180px] xl:bottom-[90px]
-  `;
 
   const OPACITY_CLASS = scrollDirection === 'down' ? 'opacity-60' : 'opacity-100';
 
