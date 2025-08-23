@@ -1,5 +1,6 @@
+// 비교 페이지
 const ComparePage = () => {
-  return <></>;
+  return <div></div>;
 };
 
 export default ComparePage;
