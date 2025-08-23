@@ -20,7 +20,7 @@ interface FloatingButtonProps {
  * - 지금은 클릭 시 console.log만 출력
  *   - 나중에 shadcn/ui Dialog 연결 시 onClick에 모달 오픈 로직 추가
  */
-export default function FloatingButton({ isVisible = true }: FloatingButtonProps) {
+const FloatingButton = ({ isVisible = true }: FloatingButtonProps) => {
   const [scrollDirection, setScrollDirection] = useState<'up' | 'down' | null>(null);
 
   useEffect(() => {
@@ -75,4 +75,6 @@ export default function FloatingButton({ isVisible = true }: FloatingButtonProps
       <span className='sr-only'>콘텐츠 추가</span>
     </button>
   );
-}
+};
+
+export default FloatingButton;
