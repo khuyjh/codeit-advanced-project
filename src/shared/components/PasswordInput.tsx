@@ -28,16 +28,16 @@ const PasswordInput = ({ label, error, helperText, ...props }: PasswordInput) =>
       />
       {/* helperText가 있을 때와 없을 때 전체 높이가 달라져 버튼 위치를 조건부 스타일링 처리 */}
       <div
-        className={cn('absolute top-[55%] right-5', {
+        className={cn('absolute top-[48%] right-5', {
           'top-[40%] right-5 xl:top-[42%]': helperText,
         })}
       >
         {isVisible ? (
-          <button className='cursor-pointer' onClick={handleClickToggleVisibility}>
+          <button className='cursor-pointer' type='button' onClick={handleClickToggleVisibility}>
             <VisibilityOnIcon />
           </button>
         ) : (
-          <button className='cursor-pointer' onClick={handleClickToggleVisibility}>
+          <button className='cursor-pointer' type='button' onClick={handleClickToggleVisibility}>
             <VisibilityOffIcon />
           </button>
         )}
