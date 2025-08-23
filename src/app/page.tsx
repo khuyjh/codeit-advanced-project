@@ -1,4 +1,4 @@
-import FloatingButton from '@/app/components/FloatingButton';
+import FloatingButton from '@/features/mainPage/components/FloatingButton';
 
 /**
  * 메인 페이지
