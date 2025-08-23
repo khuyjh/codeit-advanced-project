@@ -27,21 +27,16 @@ const PasswordInput = ({ label, error, helperText, ...props }: PasswordInput) =>
         {...props}
       />
       {/* helperText가 있을 때와 없을 때 전체 높이가 달라져 버튼 위치를 조건부 스타일링 처리 */}
-      <div
-        className={cn('absolute top-[48%] right-5', {
+      <button
+        className={cn('absolute top-[48%] right-5 cursor-pointer', {
           'top-[40%] right-5 xl:top-[42%]': helperText,
         })}
+        type='button'
+        onClick={handleClickToggleVisibility}
+        aria-label={isVisible ? '비밀번호 숨기기' : '비밀번호 보기'}
       >
-        {isVisible ? (
-          <button className='cursor-pointer' type='button' onClick={handleClickToggleVisibility}>
-            <VisibilityOnIcon />
-          </button>
-        ) : (
-          <button className='cursor-pointer' type='button' onClick={handleClickToggleVisibility}>
-            <VisibilityOffIcon />
-          </button>
-        )}
-      </div>
+        {isVisible ? <VisibilityOnIcon /> : <VisibilityOffIcon />}
+      </button>
     </div>
   );
 };
