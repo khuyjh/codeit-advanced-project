@@ -18,13 +18,7 @@ const BASE_STYLE =
 
 const Button = ({ className, type = 'button', variant = 'primary', ...props }: Props) => {
   return (
-    <button
-      className={cn(BASE_STYLE, VARIANT_STYLE[variant], className)}
-      type={type}
-      disabled={props.disabled}
-      onClick={props.onClick}
-      {...props}
-    >
+    <button className={cn(BASE_STYLE, VARIANT_STYLE[variant], className)} type={type} {...props}>
       {props.children}
     </button>
   );
