@@ -10,19 +10,13 @@ interface StatisticsCardProps {
 
 const StatisticsCard = ({ title, value, iconType, comparisonText }: StatisticsCardProps) => {
   const iconMap = {
-    star: { component: <Star fill='currentColor' />, colorClass: 'text-yellow-400' },
-    heart: { component: <Heart fill='currentColor' />, colorClass: 'text-red-500' },
+    star: { component: <Star fill='currentColor' />, colorClass: 'text-yellow' },
+    heart: { component: <Heart fill='currentColor' />, colorClass: 'text-red' },
     message: { component: <MessageSquare fill='currentColor' />, colorClass: 'text-blue-500' },
   };
 
-  const iconData = iconMap[iconType] || { component: null, colorClass: '' };
-  const { component: IconComponent, colorClass } = iconData;
-  const formattedValue = typeof value === 'number' ? value.toLocaleString('ko-KR') : value;
-
-  if (!IconComponent) {
-    console.error(`Invalid iconType: ${iconType}`);
-    return null;
-  }
+  const { component: IconComponent, colorClass } = iconMap[iconType];
+  const formattedValue = typeof value === 'number' ? value.toLocaleString('ko-KR') : value; //한국식 숫자 단위
 
   const CARD_BASE_STYLE =
     'bg-black-800 border-black-700 border flex h-[82px] w-[335px] flex-col rounded-[12px] px-[20px] py-[20px] md:h-[169px] md:w-[218px] md:px-[40px] md:py-[30px] xl:h-[190px] xl:w-[300px] xl:px-[70px] xl:py-[30px]';
