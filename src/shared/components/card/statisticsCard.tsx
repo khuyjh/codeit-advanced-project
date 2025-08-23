@@ -17,6 +17,7 @@ const StatisticsCard = ({ title, value, iconType, comparisonText }: StatisticsCa
 
   const iconData = iconMap[iconType] || { component: null, colorClass: '' };
   const { component: IconComponent, colorClass } = iconData;
+  const formattedValue = typeof value === 'number' ? value.toLocaleString('ko-KR') : value;
 
   if (!IconComponent) {
     console.error(`Invalid iconType: ${iconType}`);
@@ -24,14 +25,14 @@ const StatisticsCard = ({ title, value, iconType, comparisonText }: StatisticsCa
   }
 
   const CARD_BASE_STYLE =
-    'bg-black-800 border-black-700 border flex h-[82px] w-[335px] flex-col rounded-[12px] px-[20px] py-[20px] md:h-[169px] md:w-[218px] md:px-[43.5px] md:py-[30px] md:space-y-[15px] xl:h-[190px] xl:w-[300px] xl:px-[74px] xl:py-[30px]';
+    'bg-black-800 border-black-700 border flex h-[82px] w-[335px] flex-col rounded-[12px] px-[20px] py-[20px] md:h-[169px] md:w-[218px] md:px-[40px] md:py-[30px] xl:h-[190px] xl:w-[300px] xl:px-[70px] xl:py-[30px]';
 
-  const CONTENT_ALIGNMENT_STYLE = 'justify-start items-start md:justify-center md:items-center';
+  const CONTENT_ALIGNMENT_STYLE = 'justify-center items-start md:justify-center md:items-center';
 
   return (
-    <div className={`${CARD_BASE_STYLE} ${CONTENT_ALIGNMENT_STYLE}`}>
+    <div className={`${CARD_BASE_STYLE} ${CONTENT_ALIGNMENT_STYLE} md:gap-y-[15px]`}>
       {/* 제목 및 값 섹션 */}
-      <div className='mb-[5px] flex items-center justify-between space-x-2.5 md:flex-col md:items-center md:space-x-0'>
+      <div className='mb-[5px] flex items-center justify-between space-x-2.5 md:flex-col md:items-center md:space-x-0 md:gap-y-[15px]'>
         {/* 제목 */}
         <p className='text-md-medium md:text-base-medium xl:text-lg-medium text-white'>{title}</p>
 
@@ -44,14 +45,14 @@ const StatisticsCard = ({ title, value, iconType, comparisonText }: StatisticsCa
             {IconComponent}
           </div>
           {/* 값 */}
-          <span className={`text-[16px] font-light text-[#9FA6B2] md:text-3xl xl:text-3xl`}>
-            {value}
+          <span className={`text-base-light md:text-xl-light xl:text-2xl-light text-gray-400`}>
+            {formattedValue}
           </span>
         </div>
       </div>
 
       {/* 하단 비교 텍스트 */}
-      <p className='text-xs-light md: text-center text-gray-400 xl:text-[14px] xl:font-light'>
+      <p className='text-xs-light md:text-xs-light xl:text-md-light text-gray-400 md:text-center'>
         {comparisonText}
       </p>
     </div>
