@@ -18,7 +18,7 @@ const PasswordInput = ({ label, error, helperText, ...props }: PasswordInput) =>
   };
 
   return (
-    <div className='relative w-full max-w-[335px] md:max-w-110 xl:max-w-160'>
+    <div className='relative w-full md:max-w-110 xl:max-w-160'>
       <Input
         error={error}
         type={isVisible ? 'text' : 'password'}
