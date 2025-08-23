@@ -1,3 +1,5 @@
+'use Client';
+
 import React, { useState, useEffect } from 'react';
 
 import CategorySidebar from '@/app/components/CategorySidebar';
