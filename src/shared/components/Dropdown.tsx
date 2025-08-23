@@ -1,4 +1,4 @@
-//공용 단일 선택형 드롭다운 ui
+// 공용 단일 선택형 드롭다운 ui
 'use client';
 
 import { useState } from 'react';
@@ -72,4 +72,4 @@ const Dropdown = ({ initialValue, onChange, placeholder, options }: SelectDropdo
 };
 
 export default Dropdown;
-//TODO 팀 폰트 클래스 적용시 shadcn 기본 색상 설정이 이기는 문제에 대해 알아보기, 팀 폰트 클래스로 변경 시도해보기
+// TODO 팀 폰트 클래스 적용시 shadcn 기본 색상 설정이 이기는 문제에 대해 알아보기, 팀 폰트 클래스로 변경 시도해보기
