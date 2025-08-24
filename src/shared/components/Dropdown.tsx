@@ -10,8 +10,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from '@/shared/components/ui/select';
-
-import { cn } from '../lib/cn';
+import { cn } from '@/shared/lib/cn';
 
 interface Option {
   name: string;
