@@ -11,6 +11,7 @@ import { formatNumber } from '@/shared/utils/formatters';
  * value: 아이콘 -> 값
  * iconType: 아이콘
  * chipLabel: 칩 -> 텍스트
+ * chipClassName: 칩 -> 스타일
  * className: 커스텀
  */
 interface ActivityCardProps {
@@ -19,10 +20,13 @@ interface ActivityCardProps {
   value?: string | number;
   iconType?: 'star' | 'message';
   chipLabel?: string;
+  chipClassName?: string;
   className?: string;
 }
 
-const CARD_BASE_STYLE = 'bg-black-800 border-black-700 border';
+const CARD_BASE_STYLE =
+  'bg-black-800 border-black-700 border flex w-full min-w-[105px] min-h-[119px] flex-col rounded-[12px] px-[26.5px] py-[20px] items-center gap-y-[15px]';
+const TOP_BASE_STYLE = 'text-md-medium xl:text-base-medium text-gray-400';
 
 const ICON_MAP = {
   star: { component: <Star fill='currentColor' />, colorClass: 'text-yellow' },
@@ -35,6 +39,7 @@ const ActivityCard = ({
   value,
   iconType,
   chipLabel,
+  chipClassName,
   className,
 }: ActivityCardProps) => {
   const renderContent = () => {
@@ -44,11 +49,16 @@ const ActivityCard = ({
       return (
         <div className='flex items-center space-x-[5px]'>
           {/* 아이콘 부분 */}
-          <div className={cn('flex h-[20px] w-[20px] items-center justify-center', colorClass)}>
+          <div
+            className={cn(
+              'flex h-[20px] w-[20px] items-center justify-center xl:h-[24px] xl:w-[24px]',
+              colorClass,
+            )}
+          >
             {IconComponent}
           </div>
           {/* 값 부분 (formatNumber로 숫자 포맷팅) */}
-          <span className='text-base-light md:text-xl-light xl:text-2xl-light text-gray-400'>
+          <span className='text-xl-regular xl:text-2xl-regular text-white'>
             {formatNumber(value)}
           </span>
         </div>
@@ -57,7 +67,7 @@ const ActivityCard = ({
     /* 칩 */
     if (variant === 'chip' && chipLabel) {
       return (
-        <Chip variant='category' size='category'>
+        <Chip variant='category' size='category' className={chipClassName}>
           {chipLabel}
         </Chip>
       );
@@ -69,7 +79,7 @@ const ActivityCard = ({
   return (
     <div className={cn(CARD_BASE_STYLE, className)}>
       {/* 상단 텍스트 */}
-      <p className='text-md-medium md:text-base-medium xl:text-lg-medium text-white'>{title}</p>
+      <p className={cn(TOP_BASE_STYLE, className)}>{title}</p>
       {/* 하단 컨텐츠 */}
       {renderContent()}
     </div>
