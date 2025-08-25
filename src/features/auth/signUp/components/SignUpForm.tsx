@@ -22,7 +22,6 @@ const SignUpForm = () => {
     resolver: zodResolver(signUpSchema),
     mode: 'onBlur',
     reValidateMode: 'onChange',
-    criteriaMode: 'all',
     defaultValues: {
       email: '',
       nickname: '',
