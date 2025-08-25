@@ -25,8 +25,8 @@ interface HomeItemCardProps {
 
 // 카드 내부 스타일 정리
 const CARD_BASE_STYLE =
-  'border-black-700 bg-black-800 relative h-auto w-[160px] rounded-lg border p-[10px] md:w-[247px] xl:w-[300px]';
-const REVIEW_FAVOTIYE_TEXT_STYLE =
+  'block relative no-underline text-inherit cursor-pointer border border-black-700 bg-black-800 rounded-lg p-[10px] w-[160px] md:w-[247px] xl:w-[300px] h-auto focus:outline-none focus-visible:ring-2 focus-visible:ring-fuchsia-500/60 transition hover:shadow-lg hover:border-gray-400';
+const REVIEW_FAVORITE_TEXT_STYLE =
   'text-sm-regular md:text-md-regular xl:text-base-regular flex items-center gap-1 text-gray-600';
 const STAR_CONTAINER_STYLE =
   'order-last flex shrink-0 basis-full items-center gap-1 md:order-none md:ml-auto md:basis-auto';
@@ -40,14 +40,12 @@ const HomeItemCard = ({
   contentId,
 }: HomeItemCardProps) => {
   return (
-    // 가장 바깥 컨테이너 - width값을 가장 바깥인 부모 컨테이너에만 적용 고정값으로 처리하기로 함
-    <div className={CARD_BASE_STYLE}>
-      {/* 클릭 시 해당 상세 페이지로 이동 */}
-      <Link
-        href={`/product/${contentId}`}
-        aria-label={`${title} 상세보기`}
-        className='absolute inset-0 z-10 rounded-lg'
-      />
+    // 가장 바깥 컨테이너 - width값을 가장 바깥인 부모 컨테이너에만 적용 고정값으로 처리하기로 함 Link 태그로 변경됨
+    <Link
+      href={`/product/${contentId}`}
+      aria-label={`${title} 상세보기`}
+      className={CARD_BASE_STYLE}
+    >
       {/* 아이템 요소 컨테이너 */}
       <div className='flex w-full flex-col gap-[10px]'>
         {/* 이미지 컨테이너 - api 이미지 비율이 다를 경우 깨질 수 있어 고정 값 대신 해당 사항 적용*/}
@@ -65,13 +63,13 @@ const HomeItemCard = ({
           {/* 리뷰, 찜, 별점 컨테이너 */}
           <div className='flex flex-wrap items-center gap-x-4 gap-y-1 md:flex-nowrap md:gap-y-0'>
             {/* 리뷰 */}
-            <div className={REVIEW_FAVOTIYE_TEXT_STYLE}>
+            <div className={REVIEW_FAVORITE_TEXT_STYLE}>
               <span>리뷰</span>
               {/* 리뷰 개수 */}
               <span>{reviewCount}</span>
             </div>
             {/* 찜(favorite) */}
-            <div className={REVIEW_FAVOTIYE_TEXT_STYLE}>
+            <div className={REVIEW_FAVORITE_TEXT_STYLE}>
               <span>찜</span>
               {/* 찜 개수 */}
               <span>{favoriteCount}</span>
@@ -88,7 +86,7 @@ const HomeItemCard = ({
           </div>
         </div>
       </div>
-    </div>
+    </Link>
   );
 };
 
