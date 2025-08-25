@@ -49,7 +49,7 @@ const HomeItemCard = ({
       {/* 아이템 요소 컨테이너 */}
       <div className='flex w-full flex-col gap-[10px]'>
         {/* 이미지 컨테이너 - api 이미지 비율이 다를 경우 깨질 수 있어 고정 값 대신 해당 사항 적용*/}
-        <div className='relative w-full' style={{ aspectRatio: '14 / 9' }}>
+        <div className='relative aspect-[14/9] w-full'>
           <Image src={contentImage} alt={title} fill className='object-contain' />
         </div>
         {/* 제목 및 값 섹션 */}
