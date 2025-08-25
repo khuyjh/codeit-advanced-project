@@ -6,7 +6,7 @@ const SocialLogin = () => {
       <span className='text-md-regular xl:text-base-regular text-gray-600'>
         SNS로 바로 시작하기
       </span>
-      <button className='cursor-pointer' type='button'>
+      <button className='cursor-pointer' type='button' aria-label='카카오톡 소셜 로그인 버튼'>
         <KakaoIcon />
       </button>
     </div>
