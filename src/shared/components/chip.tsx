@@ -29,7 +29,7 @@ const chipVariants = cva(
       },
     },
     defaultVariants: {
-      /* 기본값 */
+      /* 기본값 - 카테고리*/
       variant: 'category',
       size: 'category',
     },
