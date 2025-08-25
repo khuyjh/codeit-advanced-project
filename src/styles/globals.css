@@ -1,5 +1,7 @@
+@config '../../tailwind.config.ts';
+
 @import 'tailwindcss';
-@import "tw-animate-css";
+@import 'tw-animate-css';
 
 @custom-variant dark (&:is(.dark *));
 
@@ -14,9 +16,7 @@
 
   --color-white: #f1f1f5;
 
-  --color-main-gradient: #5097fa #5363ff;
-  --color-main-blue: #5097fa;
-  --color-main-indigo: #5363ff;
+  --color-main: #c40c0c;
 
   --color-yellow: #ffc83c;
   --color-green: #05d58b;
@@ -25,137 +25,18 @@
 }
 
 @layer utilities {
-  /* bg-color */
-  .bg-main-gradient {
-    background: linear-gradient(91.17deg, #5097fa 0%, #5363ff 100%);
-  }
-
-  /* fonts */
-  .text-2xl-bold {
-    font-size: 24px;
-    font-weight: 700;
-  }
-
-  .text-2xl-regular {
-    font-size: 24px;
-    font-weight: 400;
-  }
-
-  .text-xl-bold {
-    font-size: 20px;
-    font-weight: 700;
-  }
-
-  .text-xl-regular {
-    font-size: 20px;
-    font-weight: 400;
-  }
-
-  .text-lg-bold {
-    font-size: 18px;
-    font-weight: 700;
-  }
-
-  .text-lg-semibold {
-    font-size: 18px;
-    font-weight: 600;
-  }
-
-  .text-lg-medium {
-    font-size: 18px;
-    font-weight: 500;
-  }
-
-  .text-lg-regular {
-    font-size: 18px;
-    font-weight: 400;
-  }
-
-  .text-lg-light {
-    font-size: 18px;
-    font-weight: 300;
-  }
-
-  .text-base-bold {
-    font-size: 16px;
-    font-weight: 700;
-  }
-
-  .text-base-semibold {
-    font-size: 16px;
-    font-weight: 600;
-  }
-
-  .text-base-medium {
-    font-size: 16px;
-    font-weight: 500;
-  }
-
-  .text-base-regular {
-    font-size: 16px;
-    font-weight: 400;
-  }
-
-  .text-base-light {
-    font-size: 16px;
-    font-weight: 300;
-  }
-
-  .text-md-bold {
-    font-size: 14px;
-    font-weight: 700;
-  }
-
-  .text-md-semibold {
-    font-size: 14px;
-    font-weight: 600;
-  }
-
-  .text-md-medium {
-    font-size: 14px;
-    font-weight: 500;
-  }
-
-  .text-md-regular {
-    font-size: 14px;
-    font-weight: 400;
-  }
-
-  .text-md-light {
-    font-size: 14px;
-    font-weight: 300;
-  }
-
-  .text-sm-bold {
-    font-size: 12px;
-    font-weight: 700;
-  }
-
-  .text-sm-semibold {
-    font-size: 12px;
-    font-weight: 600;
-  }
-
-  .text-sm-medium {
-    font-size: 12px;
-    font-weight: 500;
-  }
-
-  .text-sm-regular {
-    font-size: 12px;
-    font-weight: 400;
-  }
-
-  .text-sm-light {
-    font-size: 12px;
-    font-weight: 300;
-  }
 }
 
 @layer components {
 }
 
 @layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
 }
 
 @theme inline {
@@ -263,13 +144,4 @@
   --sidebar-accent-foreground: oklch(0.985 0 0);
   --sidebar-border: oklch(1 0 0 / 10%);
   --sidebar-ring: oklch(0.556 0 0);
-}
-
-@layer base {
-  * {
-    @apply border-border outline-ring/50;
-  }
-  body {
-    @apply bg-background text-foreground;
-  }
 }
