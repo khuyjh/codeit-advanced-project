@@ -14,8 +14,13 @@ const SignInForm = () => {
         autoComplete='email'
         placeholder='이메일을 입력해 주세요'
       />
-      <PasswordInput label='비밀번호' id='password' placeholder='비밀번호를 입력해 주세요' />
-      <Button className='max-w-auto mt-[30px] md:mt-5' type='submit'>
+      <PasswordInput
+        label='비밀번호'
+        id='password'
+        placeholder='비밀번호를 입력해 주세요'
+        autoComplete='current-password'
+      />
+      <Button className='mt-[30px] max-w-full md:mt-5' type='submit'>
         로그인
       </Button>
     </form>
