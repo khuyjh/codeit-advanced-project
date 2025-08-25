@@ -4,24 +4,21 @@ import Link from 'next/link';
 
 import { useState } from 'react';
 
-type GlobalNavProps = {
-  isLoggedIn: boolean;
-};
-
-export default function GlobalNav({ isLoggedIn }: GlobalNavProps) {
+export default function GlobalNav() {
   const [searchOpen, setSearchOpen] = useState(false);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   return (
-    <header className='top-0 z-40 lg:sticky lg:top-[36px]'>
+    <header className='top-0 z-40 xl:sticky xl:top-[36px]'>
       <nav className={NAV_CONTAINER}>
         {/*로고*/}
         <Link href='/' className='flex items-center'>
-          <img src='/icons/Logo.svg' alt='로고' className='h-[28px] lg:h-[56px]' />
+          <img src='/icons/Logo.svg' alt='로고' className='h-[28px] xl:h-[56px]' />
         </Link>
         {/*PC 검색창*/}
-        <div className='hidden lg:flex lg:items-center'>
+        <div className='hidden xl:flex xl:items-center'>
           <div className={SEARCH_BOX}>
-            <button type='submit' className='cursor-pointer'>
+            <button type='button' className='cursor-pointer'>
               <img src='/icons/SearchIcon.svg' alt='검색' className='h-[24px] w-[24px]' />
             </button>
             <input
@@ -43,7 +40,7 @@ export default function GlobalNav({ isLoggedIn }: GlobalNavProps) {
             </div>
           ) : (
             <div className={DESKTOP_AUTH}>
-              <Link href='/login' className='hover:text-[var(--color-white)]'>
+              <Link href='/signin' className='hover:text-[var(--color-white)]'>
                 로그인
               </Link>
               <Link href='/signup' className='hover:text-[var(--color-white)]'>
@@ -54,7 +51,7 @@ export default function GlobalNav({ isLoggedIn }: GlobalNavProps) {
         </div>
 
         {/*모바일 메뉴,검색 버튼*/}
-        <div className='flex items-center lg:hidden'>
+        <div className='flex items-center xl:hidden'>
           {!searchOpen && (
             <>
               <button
@@ -76,7 +73,7 @@ export default function GlobalNav({ isLoggedIn }: GlobalNavProps) {
 
         {/*모바일 검색창*/}
         {searchOpen && (
-          <div className='lg:hidden'>
+          <div className='xl:hidden'>
             <div className={MOBILE_SEARCH_BOX}>
               <button className='h-[24px] w-[24px] place-items-center' aria-label='검색'>
                 <img src='/icons/SearchIcon.svg' alt='검색' />
@@ -102,7 +99,7 @@ export default function GlobalNav({ isLoggedIn }: GlobalNavProps) {
 }
 
 const NAV_CONTAINER =
-  'relative mx-[20px] flex h-[70px] items-center justify-between md:mx-[60px] lg:mx-[120px]';
+  'relative mx-[20px] flex h-[70px] items-center justify-between md:mx-[60px]  xl:mx-[120px]';
 
 const SEARCH_BOX =
   'flex w-[400px] items-center rounded-[28px] bg-[var(--color-black-800)] px-[20px] py-[16px] text-base text-[var(--color-white)]';
